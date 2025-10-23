@@ -115,3 +115,24 @@ for i in test[5:7]:
         if j != fac[-1]:
             expr += '*'
     print(f"factor {i} = " + expr)
+print("pollard_rho")
+for i in test[6:7]:
+    fac = rho(i,[])
+    expr = ''
+    for j in fac:
+        expr += str(j)
+        if j != fac[-1]:
+            expr += '*'
+    print(f"factor {i} = " + expr)
+##
+Trial_Division
+factor 4279209601 = 4279209601
+factor 11626953439 = 100547*115637
+pollard_rho
+factor 192311489255622 = 2*3*11*4919*592358293
+factor 16095650737563753533 = 2299484981*6999676393
+factor 45808220048235498832399142287 = 214028557998809*214028541221543
+pollard_p-1
+factor 149735462706744928439306661202330062437 = 15898494593416980319*9418216412058612923
+pollard_rho
+factor 548025133786371639137565044874029366557 = 28158266453337837023*19462317919838051459

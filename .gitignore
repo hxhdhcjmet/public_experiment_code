@@ -38,4 +38,13 @@
 *.app
 
 # debug information files
-*.dwo
+dwo
+# json
+*.json
+# mian
+mian
+# server
+server
+# main
+mian
+# 

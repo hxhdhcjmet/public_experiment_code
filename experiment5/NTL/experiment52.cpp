@@ -38,8 +38,17 @@ int main(){
     vector<ZZ> P = {ZZ(768075001),ZZ(866704609),ZZ(916636177),ZZ(652580214507899),ZZ(827370290159669027)};
     vector<ZZ> G = {ZZ(17),ZZ(53),ZZ(5),ZZ(2),ZZ(2)};
     vector<ZZ> H = {ZZ(750713277),ZZ(210331466),ZZ(481985755),ZZ(77240405458667),ZZ(282875805618794488)};
+    for(size_t i = 0;i<50;i++){
+        cout<<"=";
+    }
+    cout<<endl;
     cout<<"totally five piece of test data"<<endl;
-    for(size_t i = 0;i<P.size();i++){
+    cout<<"using baby_step_giant_step algorithm"<<endl;
+     for(size_t i = 0;i<50;i++){
+        cout<<"=";
+    }
+    cout<<endl;
+    for(size_t i = 0;i<P.size()-1;i++){
         cout<<endl;
         ZZ p(P[i]),g(G[i]),h(H[i]);
         cout<<"begin to solve the number "<<i+1 <<" function..."<<endl;
@@ -47,10 +56,17 @@ int main(){
         ZZ result = BSGS(g,h,p);
         auto end = high_resolution_clock::now();
         auto duration = duration_cast<milliseconds>(end-start).count();
-        cout<<"the solution of number "<< i <<" function: "<<g<<"^x = "<<h<<" mod "<<p<<" is "
+        cout<<"the solution of number "<< i+1 <<" function: "<<g<<"^x = "<<h<<" mod "<<p<<" is "
         <<result<<endl;
         cout<<"using time:"<<duration<<" ms"<<endl;
-        
     }
+
+    //最后一个测试数据单独用分钟做单位测试
+    auto start = high_resolution_clock::now();
+    ZZ result = BSGS(G[4],H[4],P[4]);
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<minutes>(end-start).count();
+    cout<<"the solution of the number 5 function "<<G[4]<<"^x = "<<H[4]<<" mod "<<P[4]<<" is "<<result<<endl;
+    cout<<"using time:"<<duration<<" minutes"<<endl;
     return 0;
 }

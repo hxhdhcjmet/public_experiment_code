@@ -55,3 +55,25 @@ for i in range(5):
     p,g,h= test[i]
     %time x= pollard_rho(g,h,p)
     print(f"{g}^x= {h} (mod {p})，解得x={x}")
+##
+Find Collision
+CPU times: user 286 ms, sys: 19.5 ms, total: 306 ms
+Wall time: 298 ms
+17^x= 750713277 (mod 768075001)，解得x=731948411
+Find Collision
+CPU times: user 623 ms, sys: 8.11 ms, total: 631 ms
+Wall time: 630 ms
+53^x= 210331466 (mod 866704609)，解得x=653693977
+Find Collision
+CPU times: user 195 ms, sys: 4.62 ms, total: 200 ms
+Wall time: 200 ms
+5^x= 481985755 (mod 916636177)，解得x=745897096
+Find Collision
+CPU times: user 2min 33s, sys: 0 ns, total: 2min 33s
+Wall time: 2min 33s
+2^x= 77240405458667 (mod 652580214507899)，解得x=472601834152789
+Find Collision
+CPU times: user 5h 4min 36s, sys: 3min 54s, total: 5h 8min 31s
+Wall time: 5h 8min 30s
+2^x= 282875805618794488 (mod 827370290159669027)，解得x=642261215921134456
+##
